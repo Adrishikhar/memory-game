@@ -49,32 +49,37 @@ const cardArray = [
 		img: "images/pizza.png",
 	},
 ]
-cardArray.sort(() => 0.5 - Math.random()) //sorts the cardArray elements
 
 const gridDisplay = document.querySelector("#grid")
 const moves = document.getElementById("moves")
 const button = document.getElementById("play")
-const cardsSelected = []
+button.addEventListener("click", startGame)
+cardsSelected = []
 
 function startGame() {
-	button.addEventListener("click", () => {
-		createBoard()
+	const existingCards = document.querySelectorAll(".game-card") // Select cards with the class "game-card"
+	existingCards.forEach(function (existingCard) {
+		existingCard.remove()
 	})
+
+	cardsSelected = []
+	createBoard()
 }
 
 function createBoard() {
+	cardArray.sort(() => 0.5 - Math.random()) //sorts the cardArray elements
 	cardArray.forEach(function (cardData) {
 		const card = createCard(cardData)
 		card.addEventListener("click", () => flipCard(cardData, card))
 		gridDisplay.appendChild(card)
 	})
-	console.log(gridDisplay)
 }
 
 function createCard(cardData) {
 	const card = document.createElement("img")
 	card.setAttribute("src", "images/blank.png")
 	card.setAttribute("name", cardData.name)
+	card.classList.add("game-card")
 	return card
 }
 
@@ -101,5 +106,3 @@ function checkMatch() {
 		secondLastCard.src = "images/blank.png"
 	}
 }
-
-startGame()
