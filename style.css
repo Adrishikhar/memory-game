@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "Poppins", sans-serif;
+}
+
+body {
+	background-color: antiquewhite;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* header */
+
+header {
+	width: 100%;
+	height: 100px;
+	background-color: rgb(237, 199, 151);
+	display: flex;
+	align-items: center;
+}
+
+header h1 {
+	padding: 10px;
+	margin: 30px;
+	flex: 1;
+}
+header button {
+	font-size: 16px;
+	padding: 10px 20px;
+	margin-right: 40px;
+	border-radius: 5px;
+	box-shadow: 5px 5px;
+}
+
+/* Main game */
+
+body main {
+	height: 500px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#grid {
+	width: 500px;
+	height: 400px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+img {
+	border-radius: 5px;
+	margin: 10px;
+}
+
+/* Moves Taken */
+.movesTaken {
+	height: 60px;
+	width: 300px;
+	background-color: aliceblue;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 18px;
+	border-radius: 7px;
+	box-shadow: 7px 7px peachpuff;
+}
+
+.movesTaken span {
+	padding-left: 8px;
+	font-weight: 400;
+}
